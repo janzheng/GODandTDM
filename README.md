@@ -1,4 +1,4 @@
-upowerfitness
+GOD and the DRUM MASCHINE
 =============
 
-Boutique gym concept built on Jekyll
+Music microsite

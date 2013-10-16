@@ -160,17 +160,21 @@ body {
     // background-image: url(../../images/image2.png), linear-gradient(90deg, hsl(210,40%,12%), hsl(210,40%,20%), hsl(210,40%,12%));
   //}
 
-  #download { 
+  #download {
+    display: block;
     @extend %sourcesans; font-weight: 900; text-transform: uppercase; 
     @include span-all(6, 8, 8, 8); padding: $base*2; padding-left: $base*3; 
-    color: rgba(0, 0, 0 ,0.04); 
+    // color: rgba(0, 0, 0 ,0.04); 
+    // text-shadow: #050d02 0 0 10px;
+
+    color: rgba(30,30,30,0.04);
+    text-shadow: $c2-dark 0 0 10px;
     font-size: $base*6; 
-    text-shadow: #050d02 0 0 10px;
     letter-spacing: -6px; 
     transition: all 3s cubic-bezier(0, 0.95, 0, 1);
 
     &:hover {
-      text-shadow: #080808 0 0 22px; 
+      text-shadow: $c2-light 0 0 1px; 
       letter-spacing: 4px; 
       font-size: $base*7; 
       transition: all 25s cubic-bezier(0, 0.35, 0, 1);
