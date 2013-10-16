@@ -1,0 +1,111 @@
+
+
+// *********************************************************
+// DESIGN FILE
+// - this file specifies variables and design components
+// - don't directly affect IDs and classes from this file
+// *********************************************************
+
+
+// *********************************************************
+// DESIGN MIXINS
+// *********************************************************
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin ease-transition($speed){
+    -webkit-transition: $speed ease;
+    -moz-transition: $speed ease;
+    -ms-transition: $speed ease;
+    -o-transition: $speed ease;
+    transition: $speed ease;
+}
+
+
+.rounded {
+
+}
+
+// *********************************************************
+// VARIABLES
+// *********************************************************
+
+// fonts
+$menu-font-size: $base;
+$footer-title-size: $base*1.25;
+
+$font-size-h1: $base*2.8;
+$font-size-h2: $base*1.3;
+$font-size-h3: $base;
+$font-size-paragraph: $base*1.3;
+
+// colors
+.white {color: #fff;}
+$col-white: #ffffff;
+$col-fontcolor: #4a3d3a;
+$col-fontcolor2: #464646;
+$col-fontcolorfooter: #999;
+
+$col-darkgray: #333;
+$col-medgray: #949494;
+$col-gray: #444;
+$col-ltgray: #a2a2a2;
+$col-vltgray: #d7d7d7;
+$col-dblue: hsl(210,50%,20%);
+
+
+$c1-black: #02020a;
+$c1-blue: #151223;
+$c1-green: #31593f;
+$c1-light: #a7a071;
+$c1-dark: #594f43;
+
+$c2-black: #02020a;
+$c2-green: #4c8b59;
+$c2-gray: #bfbeac;
+$c2-light: #d8c891;
+$c2-dark: #a49375;
+
+$side-wrap: $base*1.5;
+
+// *********************************************************
+// FONTS
+// *********************************************************
+
+// FONT STACKS
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+%quicksand {font-family: 'Quicksand', serif;}
+%sourcesans {font-family: 'Source Sans Pro', sans-serif;}
+
+
+
+// *********************************************************
+// DESIGN CLASSES
+// *********************************************************
+
+// padding used for content/container sections, and between content sections
+%padding-content {
+   @include media($small-only){padding: $base $base*0.8 $base $base*0.8; }
+   @include media($medium){padding: $base*2 $base*1.3 $base $base*1.3; }
+   @include media($larger){padding: $base*2 $base*3 $base $base*3; }
+}
+
+// distance top of content section and content (lots of room for menu)
+// $padding-content-top: $base*7;
+%padding-top {
+   @include media($small) {padding-top: $base*3;}
+   @include media($medium) {padding-top: $base*7;}
+}
+
+// padding and margin within content sections
+%margin-content {margin: $base 0 $base 0;}
+%padding-heading {padding: $base*0.3 $base $base*0.3 $base/2; @extend %margin-content;}
+%padding-content-item {padding: $base*0.8 $base $base*0.8 $base; @extend %margin-content;}
+
+%shadow-internal-light {box-shadow: 0 0px 50px rgba(20, 20, 20, 0.07), 0 0 70px rgba(0, 0, 0, 0.08) inset;}
+%shadow-internal-dark {box-shadow: 0 0px 50px rgba(20, 20, 20, 0.22), 0 0 80px rgba(0, 0, 0, 0.42) inset;}
+%shadow-gray {box-shadow:1px 1px 4px rgba(180,180,180,0.4),inset 1px 0 1px rgba(255,255,255,0.6);}
