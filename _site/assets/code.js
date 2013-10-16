@@ -2,7 +2,6 @@
 $( document ).ready(function() {
   // Handler for .ready() called.
 
-  console.log('action')
   // $('.main-title').hover(
   $('#page-intro').hover(
     function() {
@@ -16,5 +15,25 @@ $( document ).ready(function() {
       }, 500 );
     }
   );
+
+
+
+
+
+  // analytics
+  $('#download').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'download');
+  });
+  $('#facebook').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'facebook');
+  });
+  $('#twitter').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'twitter');
+  });
+  $('#youtube').on('click', function() {
+    ga('send', 'event', 'button', 'click', 'youtube');
+  });
+
+
 });
 
