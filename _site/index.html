@@ -22,7 +22,6 @@
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      // ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +  'stats.g.doubleclick.net/dc.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 
@@ -35,6 +34,8 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-44904619-1', 'godandtdm.com');
+    // local testing
+    // ga('create', 'UA-44904619-1', {'cookieDomain': 'none'});
     ga('send', 'pageview');
   </script>
 </head>
@@ -72,8 +73,8 @@
   </div>
 
   <script>
-    ga('send', 'event', 'test', 'page-load');
-    ga('send', 'event', 'category', 'action');
+    // ga('send', 'event', 'test', 'page-load');
+    // ga('send', 'event', 'category', 'action');
   </script>
   <script>
     $(document).ready(function(){
@@ -99,17 +100,17 @@
 
     // analytics
     $('#download').on('click', function() {
-      ga('send', 'event', 'button', 'click', 'download');
+      ga('send', 'event', 'download', 'download');
       console.log('download clicked')
     });
     $('#facebook').on('click', function() {
-      ga('send', 'event', 'button', 'click', 'facebook');
+      ga('send', 'event', 'social', 'facebook');
     });
     $('#twitter').on('click', function() {
-      ga('send', 'event', 'button', 'click', 'twitter');
+      ga('send', 'event', 'social', 'twitter');
     });
     $('#youtube').on('click', function() {
-      ga('send', 'event', 'button', 'click', 'youtube');
+      ga('send', 'event', 'social', 'youtube');
     });
 
     });
