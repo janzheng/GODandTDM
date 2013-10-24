@@ -37,16 +37,46 @@
     ga('create', 'UA-44904619-1', 'godandtdm.com');
     ga('send', 'pageview');
   </script>
-  <!-- 
-    <script type="text/javascript" src="assets/code.js"></script>
-  -->
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="bg" id="bg1"></div>
+
+	  <div class="main">
+	    
+      <section id="page-video">
+        <div class="page_container row">
+          <div class="video-container">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/_tPNKBNIIz8" frameborder="0" allowfullscreen></iframe>
+          </div>
+  	    </div>
+      </section>
+
+      <section id="page-intro">
+        <div class="page_container row">
+          <div class="main-title"><span class="god">GOD</span><span class="andthe">and the</span> <span class="drum">DRUM</span> <span class="maschine">MASCHINE</span></div>
+
+          <a class="btn" id="download" href="assets/download/GODandTDM.zip">download</a>
+          <div class="social">
+            <a class="btn" id="facebook" href="http://www.facebook.com/GODandTDM">facebook</a>
+            <a class="btn" id="twitter" href="https://twitter.com/godandtdm">@GODandTDM</a>
+            <a class="btn" id="youtube" href="http://www.youtube.com/GODandTDM">youtube</a>
+          </div>
+
+        </div>
+      </section>
+	    
+    </div>
+
+  </div>
 
   <script>
     ga('send', 'event', 'test', 'page-load');
     ga('send', 'event', 'category', 'action');
   </script>
-	<script>
-	  $(document).ready(function(){
+  <script>
+    $(document).ready(function(){
       $(".main").onepage_scroll({
         sectionContainer: "section",
         updateURL: true,
@@ -82,42 +112,8 @@
       ga('send', 'event', 'button', 'click', 'youtube');
     });
 
-		});
-		
-	</script>
-</head>
-<body>
-
-  <div class="wrapper">
-    <div class="bg" id="bg1"></div>
-
-	  <div class="main">
-	    
-      <section id="page-video">
-        <div class="page_container row">
-          <div class="video-container">
-            <iframe width="560" height="315" src="//www.youtube.com/embed/_tPNKBNIIz8" frameborder="0" allowfullscreen></iframe>
-          </div>
-  	    </div>
-      </section>
-
-      <section id="page-intro">
-        <div class="page_container row">
-          <div class="main-title"><span class="god">GOD</span><span class="andthe">and the</span> <span class="drum">DRUM</span> <span class="maschine">MASCHINE</span></div>
-
-          <a class="btn" id="download" href="assets/download/GODandTDM.zip">download</a>
-          <div class="social">
-            <a class="btn" id="facebook" href="http://www.facebook.com/GODandTDM">facebook</a>
-            <a class="btn" id="twitter" href="https://twitter.com/godandtdm">@GODandTDM</a>
-            <a class="btn" id="youtube" href="http://www.youtube.com/GODandTDM">youtube</a>
-          </div>
-
-        </div>
-      </section>
-	    
-    </div>
-
-  </div>
-
+    });
+    
+  </script>
 </body>
 </html>
