@@ -21,7 +21,7 @@
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 'stats.g.doubleclick.net/dc.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 
@@ -35,9 +35,11 @@
 
     ga('create', 'UA-44904619-1', 'godandtdm.com');
     ga('send', 'pageview');
+    ga('send', 'event', 'page-run-test-event');
   </script>
-  <script type="text/javascript" src="assets/code.js"></script>
-
+  <!-- 
+    <script type="text/javascript" src="assets/code.js"></script>
+   -->
 	<script>
 	  $(document).ready(function(){
       $(".main").onepage_scroll({
@@ -45,6 +47,36 @@
         updateURL: true,
         loop: false
       });
+
+    // $('.main-title').hover(
+    $('#page-intro').hover(
+      function() {
+        $('.wrapper').animate({
+            backgroundColor: jQuery.Color( "rgba(0,0,0,0.7)" )
+        }, 500 );
+      },
+      function() {
+        $('.wrapper').animate({
+            backgroundColor: jQuery.Color( "rgba(0,0,0,1)" )
+        }, 500 );
+      }
+    );
+
+    // analytics
+    $('#download').on('click', function() {
+      ga('send', 'event', 'button', 'click', 'download');
+      console.log('download clicked')
+    });
+    $('#facebook').on('click', function() {
+      ga('send', 'event', 'button', 'click', 'facebook');
+    });
+    $('#twitter').on('click', function() {
+      ga('send', 'event', 'button', 'click', 'twitter');
+    });
+    $('#youtube').on('click', function() {
+      ga('send', 'event', 'button', 'click', 'youtube');
+    });
+
 		});
 		
 	</script>
