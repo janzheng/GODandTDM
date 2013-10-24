@@ -130,6 +130,33 @@ body {
 }
 
 
+.download {
+  display: block;
+  @extend %sourcesans; font-weight: 900; text-transform: uppercase; 
+  @include span-all(6, 8, 8, 8); padding: $base*2; padding-left: $base*3; 
+  // color: rgba(0, 0, 0 ,0.04); 
+  // text-shadow: #050d02 0 0 10px;
+
+  color: rgba(30,30,30,0.04);
+  text-shadow: $c2-dark 0 0 10px;
+  font-size: $base*6; 
+  letter-spacing: -6px; 
+  transition: all 3s cubic-bezier(0, 0.95, 0, 1);
+
+  &:hover {
+    text-shadow: $c2-light 0 0 1px; 
+    letter-spacing: 4px; 
+    font-size: $base*7; 
+    transition: all 25s cubic-bezier(0, 0.35, 0, 1);
+    margin-left: -35px;
+    cursor: pointer;
+  }
+}
+
+#download-1 {
+  font-size: $base*3;
+  @include span-all(6, 12, 12, 12);
+}
 // *********************************************************
 // INTRO PAGE
 // *********************************************************
@@ -159,28 +186,6 @@ body {
     }
   }
 
-  #download {
-    display: block;
-    @extend %sourcesans; font-weight: 900; text-transform: uppercase; 
-    @include span-all(6, 8, 8, 8); padding: $base*2; padding-left: $base*3; 
-    // color: rgba(0, 0, 0 ,0.04); 
-    // text-shadow: #050d02 0 0 10px;
-
-    color: rgba(30,30,30,0.04);
-    text-shadow: $c2-dark 0 0 10px;
-    font-size: $base*6; 
-    letter-spacing: -6px; 
-    transition: all 3s cubic-bezier(0, 0.95, 0, 1);
-
-    &:hover {
-      text-shadow: $c2-light 0 0 1px; 
-      letter-spacing: 4px; 
-      font-size: $base*7; 
-      transition: all 25s cubic-bezier(0, 0.35, 0, 1);
-      margin-left: -35px;
-      cursor: pointer;
-    }
-  }
   .social { 
     // background: rgba(0,0,0,0.8);
     @include span-all(6, 4, 4, 4); 

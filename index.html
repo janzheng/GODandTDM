@@ -12,6 +12,7 @@
   <script type="text/javascript" src="assets/jquery.color-2.1.2.min.js"></script>
   <link href='assets/onepage-scroll.css' rel='stylesheet' type='text/css'>
   <link href='assets/stylesheets/compiled/main.css' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="assets/code.js"></script>
 
   <script type="text/javascript">
 
@@ -51,6 +52,7 @@
           <div class="video-container">
             <iframe width="560" height="315" src="//www.youtube.com/embed/_tPNKBNIIz8" frameborder="0" allowfullscreen></iframe>
           </div>
+          <a class="btn download" id="download-1" href="assets/download/GODandTDM.zip" download>download all the music.</a>
   	    </div>
       </section>
 
@@ -58,7 +60,7 @@
         <div class="page_container row">
           <div class="main-title"><span class="god">GOD</span><span class="andthe">and the</span> <span class="drum">DRUM</span> <span class="maschine">MASCHINE</span></div>
 
-          <a class="btn" id="download" href="assets/download/GODandTDM.zip">download</a>
+          <a class="btn download" id="download-2" href="assets/download/GODandTDM.zip" download>download</a>
           <div class="social">
             <a class="btn" id="facebook" href="http://www.facebook.com/GODandTDM">facebook</a>
             <a class="btn" id="twitter" href="https://twitter.com/godandtdm">@GODandTDM</a>
@@ -73,48 +75,8 @@
   </div>
 
   <script>
-    ga('send', 'event', 'test', 'page-load');
+    ga('send', 'event', 'test', 'page-load', 'test-label-1');
     // ga('send', 'event', 'category', 'action');
-  </script>
-  <script>
-    $(document).ready(function(){
-      $(".main").onepage_scroll({
-        sectionContainer: "section",
-        updateURL: true,
-        loop: false
-      });
-
-    // $('.main-title').hover(
-    $('#page-intro').hover(
-      function() {
-        $('.wrapper').animate({
-            backgroundColor: jQuery.Color( "rgba(0,0,0,0.7)" )
-        }, 500 );
-      },
-      function() {
-        $('.wrapper').animate({
-            backgroundColor: jQuery.Color( "rgba(0,0,0,1)" )
-        }, 500 );
-      }
-    );
-
-    // analytics
-    $('#download').on('click', function() {
-      ga('send', 'event', 'download', 'download');
-      console.log('download clicked')
-    });
-    $('#facebook').on('click', function() {
-      ga('send', 'event', 'social', 'facebook');
-    });
-    $('#twitter').on('click', function() {
-      ga('send', 'event', 'social', 'twitter');
-    });
-    $('#youtube').on('click', function() {
-      ga('send', 'event', 'social', 'youtube');
-    });
-
-    });
-    
   </script>
 </body>
 </html>
