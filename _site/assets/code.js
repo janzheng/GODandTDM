@@ -1,24 +1,27 @@
 
     $(document).ready(function(){
-      $(".main").onepage_scroll({
-        sectionContainer: "section",
-        updateURL: true,
-        loop: false
-      });
+      // $(".main").onepage_scroll({
+      //   sectionContainer: "section",
+      //   updateURL: true,
+      //   loop: false
+      // });
 
       // $('.main-title').hover(
-      $('#page-intro').hover(
-        function() {
-          $('.wrapper').animate({
-              backgroundColor: jQuery.Color( "rgba(0,0,0,0.7)" )
-          }, 500 );
-        },
-        function() {
-          $('.wrapper').animate({
-              backgroundColor: jQuery.Color( "rgba(0,0,0,1)" )
-          }, 500 );
-        }
-      );
+      // $('#page-intro').hover(
+      //   function() {
+      //     $('.wrapper').animate({
+      //         backgroundColor: jQuery.Color( "rgba(0,0,0,0.7)" )
+      //     }, 500 );
+      //   },
+      //   function() {
+      //     $('.wrapper').animate({
+      //         backgroundColor: jQuery.Color( "rgba(0,0,0,1)" )
+      //     }, 500 );
+      //   }
+      // );
+
+
+
 
       // analytics
       $('#download-1').on('click', function() {

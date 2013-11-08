@@ -23,66 +23,24 @@
 // *********************************************************
 
 
-    html {
-      height: 100%;
-      overflow:hidden;
-    }
-    body {
-      position: relative;
-      margin: 0;
-      height: 100%;
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    .wrapper {
-      height: 100% !important;
-      height: 100%;
-      margin: 0 auto; 
-      overflow: hidden;
-    }
-        
-    .main section  {
-      overflow: hidden;
-    }
-    
-    /*
-    .main section.page1 {
-      background:rgb(230, 217, 200);
-    }
-    .main section.page2 {
-      background: #555557 url(assets/back-phone.png) no-repeat center -150px ;
-    }
-    .main section.page2 .page_container {
-      margin-top: 240px;
-      overflow: hidden;
-    }
-    .main section.page3 {
-      background:url(assets/tilted-phone.png) no-repeat 156px -150px ;
-    }
-    .main section.page3 .page_container {
-      overflow: hidden;
-      width: 500px;
-      right: -285px;
-      background:;
-    }
-*/
+html {
+  height: 100%;
+}
+body {
+  background-image: url(../../images/image2.png); //fall-back
+  background-repeat: no-repeat; 
+  background-position: center center; 
+  background-attachment: fixed;
+  background-size: cover;
 
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 30px; height: 0; overflow: hidden;
-    }
-     
-    .video-container iframe,
-    .video-container object,
-    .video-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    /*- See more at: http://avexdesigns.com/responsive-youtube-embed/#sthash.RQDSwqMy.dpuf*/
+  min-height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main section  {
+  overflow: hidden;
+}
 
 
 h1 { @extend %sourcesans; font-size: $base*5.7; font-weight: 900; padding-bottom: $base/2; line-height: $base*1.3;}
@@ -93,7 +51,14 @@ p { font-size: $base; font-family: "Helvetica Neue", Helvetica, Arial, sans-seri
 a:link, a:active, a:visited {}
 a:hover {}
 
+$color-tan: rgba(30,30,30,0.04);
 
+%hover-off {
+  transition: all 3s cubic-bezier(0, 0.95, 0, 1);
+}
+%hover-on {
+  transition: all 2s cubic-bezier(0, 0.35, 0, 1);
+}
 
 // html { height: 100%}
 body {
@@ -116,75 +81,102 @@ body {
 
 .wrapper {
   // background: hsl(210,50%,20%);
-  background: black;
+  background: rgba(black,0.8);
 
 }
 
-.bg {
-  position: absolute; top: 0; bottom: 0; left: 0; right: 0;
 
-  background-image: url(../../images/image2.png); //fall-back
-  background-repeat: no-repeat; 
-  background-position: center center; 
-  background-size: cover;
+// 
+// Title and Video
+// 
+
+.main-title {
+  @extend %sourcesans; font-weight: 900; text-transform: uppercase; 
+  text-align: left; 
+  color: rgba(20,20,20,0.04); 
+  text-shadow: #080808 0 0 10px;
+  transition: all 6.5s cubic-bezier(0, 0.75, 0, 1);
+  // padding: $base*3;
+  margin: $base*4 0;
+  cursor: default;
+
+  // .god {letter-spacing: -7px; font-size: $base*9; line-height: $base*6;}
+  // .andthe {letter-spacing: -5px; font-size: $base*3; line-height: $base*3; display: block; left: 10px; position: relative;}
+  // .drum {letter-spacing: -7px; font-size: $base*9; line-height: $base*7; display: block;}
+  // .maschine {letter-spacing: -7px; font-size: $base*9; line-height: $base*7; display: block;}
+
+  .god {letter-spacing: -7px; font-size: $base*6; line-height: $base*0;}
+  .andthe {letter-spacing: -2px; font-size: $base*2; line-height: $base*1.5; display: block; left: 10px; position: relative;}
+  .drum {letter-spacing: -7px; font-size: $base*6; line-height: $base*4; display: block;}
+  .maschine {letter-spacing: -7px; font-size: $base*6; line-height: $base*5; display: block;}
+  @extend %hover-off;
+
+  &:hover {
+    color: rgba(0,0, 0, 1); 
+    text-shadow: rgba(80,80,80,0.44) 0 0 20px, rgba(10,10,10,0.34) 0 0 10px;
+    @extend %hover-on;
+  }
 }
+
+
+.iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.iframe-container iframe,
+.iframe-container object,
+.iframe-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.soundcloud {
+  margin-top: $base*2;
+}
+/*- See more at: http://avexdesigns.com/responsive-youtube-embed/#sthash.RQDSwqMy.dpuf*/
+
 
 
 .download {
   display: block;
-  @extend %sourcesans; font-weight: 900; text-transform: uppercase; 
-  @include span-all(6, 8, 8, 8); padding: $base*2; padding-left: $base*3; 
-  // color: rgba(0, 0, 0 ,0.04); 
-  // text-shadow: #050d02 0 0 10px;
+  @include span-all(6, 8, 8, 8); 
+}
 
-  color: rgba(30,30,30,0.04);
+
+#download-btn {
+  @extend %sourcesans; font-weight: 900; text-transform: uppercase; 
+  padding: $base*2; padding-left: 0;
+
+  color: $color-tan; 
   text-shadow: $c2-dark 0 0 10px;
   font-size: $base*6; 
   letter-spacing: -6px; 
-  transition: all 3s cubic-bezier(0, 0.95, 0, 1);
+  @extend %hover-off;
 
   &:hover {
-    text-shadow: $c2-light 0 0 1px; 
-    letter-spacing: 4px; 
-    font-size: $base*7; 
-    transition: all 25s cubic-bezier(0, 0.35, 0, 1);
-    margin-left: -35px;
+    text-shadow: $c2-light 0 0 3px; 
     cursor: pointer;
-  }
-}
+    @extend %hover-on;
 
-#download-1 {
+  }
+
   font-size: $base*3;
   @include span-all(6, 12, 12, 12);
 }
+
+
+
 // *********************************************************
 // INTRO PAGE
 // *********************************************************
 #page-intro {
   // <div class="main-title"><span id="god">GOD</span><span id="andthe">and the</span> <span id="drum">DRUM</span> <span id="maschine">MASCHINE</span></div>
-  .main-title {
-    @extend %sourcesans; font-weight: 900; text-transform: uppercase; 
-    text-align: left; 
-    color: rgba(20,20,20,0.04); text-shadow: #080808 0 0 10px;
-    transition: all 6.5s cubic-bezier(0, 0.75, 0, 1);
-    padding: $base*3;
-
-    // .god {letter-spacing: -7px; font-size: $base*9; line-height: $base*6;}
-    // .andthe {letter-spacing: -5px; font-size: $base*3; line-height: $base*3; display: block; left: 10px; position: relative;}
-    // .drum {letter-spacing: -7px; font-size: $base*9; line-height: $base*7; display: block;}
-    // .maschine {letter-spacing: -7px; font-size: $base*9; line-height: $base*7; display: block;}
-
-    .god {letter-spacing: -7px; font-size: $base*6; line-height: $base*0;}
-    .andthe {letter-spacing: -2px; font-size: $base*2; line-height: $base*1.5; display: block; left: 10px; position: relative;}
-    .drum {letter-spacing: -7px; font-size: $base*6; line-height: $base*4; display: block;}
-    .maschine {letter-spacing: -7px; font-size: $base*6; line-height: $base*5; display: block;}
-
-    &:hover {
-      color: rgba(0,0, 0, 1); 
-      text-shadow: #101010 0 0 25px;
-      transition: all 6.5s cubic-bezier(0, 0.75, 0, 1);
-    }
-  }
+  
 
   .social { 
     // background: rgba(0,0,0,0.8);
@@ -199,11 +191,11 @@ body {
       color: rgba(120,120,120,0.04);
       text-shadow: $c2-light 0 0 10px;
       font-size: $base*2.3;
-      transition: all 1s cubic-bezier(0, 0.95, 0, 1);
+      @extend %hover-off;
 
       &:hover{
         text-shadow: $c2-dark 0 0 1px;
-        transition: all 5s cubic-bezier(0, 0.35, 0, 1);
+        @extend %hover-on;
         cursor: pointer;
       }
     }
